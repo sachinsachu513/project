@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<h1>welcome to my table</h1>
+      {% load static %}
+    <link rel ="stylesheet" href="{% static  'table.css'%}">
+
+</head>
+
+    <tbody>
+    <table class="styled-table" >
+        <thead>
+        <tr class="active-row">
+            <th><b> Name</b></th>
+        <th> Age</th>
+        <th>  Salary</th>
+        <th> City</th>
+
+        </tr>
+        </thead>
+
+        <tr>
+            {% for s in emp %}
+
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.salary}}</td>
+            <td>{{s.city}}</td>
+            <td><a href="/update/{{s.id}}">edit</a></td>
+             <td><a href="/delete/{{s.id}}">delete</a></td>
+
+        </tr>
+        {% endfor %}
+
+
+
+     </table>
+     <a href="/create"><button>Add Employees</button></a>
+
+
+
+</tbody>
+</html>
